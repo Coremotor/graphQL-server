@@ -1,0 +1,29 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    createUser(input: UserInput): User!
+    deleteUser(id: ID!): Boolean
+}
+
+type Query {
+    getAllUsers: [User]!
+    getUser(id: ID!): User!
+}
+
+type User {
+    avatar: String
+    email: String!
+    first_name: String!
+    id: ID!
+    last_name: String!
+}
+
+input UserInput {
+    avatar: String
+    email: String!
+    first_name: String!
+    last_name: String!
+}
